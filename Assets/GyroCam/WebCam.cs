@@ -17,6 +17,10 @@ public class WebCam : MonoBehaviour
 
         transform.localRotation = Quaternion.AngleAxis(webCam.videoRotationAngle, -Vector3.forward);
 
-        Debug.Log("WebCamTexture Size: " + webCam.width + ", " + webCam.height);
+        Debug.Log("WebCamTexture: " + webCam.width + ", " + webCam.height);
+
+        var sy = 2.0f * Screen.width / Screen.height;
+        var sx = sy * webCam.width / webCam.height;
+        transform.localScale = new Vector3(sx, sy, 1);
     }
 }
