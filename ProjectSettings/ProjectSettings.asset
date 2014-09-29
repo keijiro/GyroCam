@@ -7,7 +7,7 @@ PlayerSettings:
   AndroidProfiler: 0
   defaultScreenOrientation: 0
   targetDevice: 2
-  targetGlesGraphics: -1
+  targetGlesGraphics: 1
   targetResolution: 0
   accelerometerFrequency: 100
   companyName: DefaultCompany
