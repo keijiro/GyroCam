@@ -4,16 +4,18 @@ using System.Collections;
 public class WebCam : MonoBehaviour
 {
     WebCamTexture webCam;
+    Renderer renderComponent;
 
     IEnumerator Start()
     {
+        renderComponent = GetComponent<Renderer>();
         webCam = new WebCamTexture(Screen.width, Screen.height);
 
         webCam.Play();
 
         while (!webCam.didUpdateThisFrame) yield return null;
 
-        renderer.material.mainTexture = webCam;
+        renderComponent.material.mainTexture = webCam;
 
         transform.localRotation = Quaternion.AngleAxis(webCam.videoRotationAngle, -Vector3.forward);
 
